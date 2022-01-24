@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+import com.br.felipedev.cadastro.model.abstracts.Pessoa;
 
 @Entity
 public class Endereco {
@@ -17,6 +20,17 @@ public class Endereco {
 	private String cidade;
 	private String estado;
 
+	@ManyToOne
+    private Pessoa pesssoa;	
+	
+	public Pessoa getPesssoa() {
+		return pesssoa;
+	}
+
+	public void setPesssoa(Pessoa pesssoa) {
+		this.pesssoa = pesssoa;
+	}
+	
 	public String getCep() {
 		return cep;
 	}

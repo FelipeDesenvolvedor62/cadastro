@@ -1,14 +1,14 @@
 package com.br.felipedev.cadastro.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
-import com.br.felipedev.cadastro.model.ENUM.TipoTelefone;
 import com.br.felipedev.cadastro.model.abstracts.Pessoa;
+import com.br.felipedev.cadastro.model.enums.TipoTelefone;
 
 @Entity
 public class Telefone {
@@ -19,6 +19,17 @@ public class Telefone {
 	private String ddd;
 	private String telefone;
 	private TipoTelefone tipo;
+
+	@ManyToOne
+    private Pessoa pesssoa;	
+	
+	public Pessoa getPesssoa() {
+		return pesssoa;
+	}
+
+	public void setPesssoa(Pessoa pesssoa) {
+		this.pesssoa = pesssoa;
+	}
 
 	public Long getId() {
 		return id;
