@@ -30,4 +30,8 @@ public class ClienteService {
 	public void update(Cliente cliente) {
 		 repo.save(cliente);
 	}
+	
+	public void delete(Cliente cliente) {
+		 repo.delete(cliente);
+	}
 }
