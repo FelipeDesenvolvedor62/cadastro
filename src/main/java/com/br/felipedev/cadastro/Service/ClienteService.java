@@ -26,4 +26,8 @@ public class ClienteService {
 	public Optional<Cliente> findById(Long id) {
 		return repo.findById(id);
 	}
+	
+	public void update(Cliente cliente) {
+		 repo.save(cliente);
+	}
 }
