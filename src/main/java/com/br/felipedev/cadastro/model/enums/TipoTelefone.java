@@ -1,4 +1,4 @@
-package com.br.felipedev.cadastro.model.ENUM;
+package com.br.felipedev.cadastro.model.enums;
 
 public enum TipoTelefone {
 	CELULAR(0),
