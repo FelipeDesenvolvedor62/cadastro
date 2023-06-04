@@ -1,4 +1,4 @@
-package com.br.felipedev.cadastro.controller;
+package com.br.felipedev.cadastro.api.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -13,38 +13,38 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.br.felipedev.cadastro.Service.ClienteService;
-import com.br.felipedev.cadastro.model.Cliente;
+import com.br.felipedev.cadastro.api.dto.ClientDto;
+import com.br.felipedev.cadastro.service.ClientService;
 
 @RestController
-@RequestMapping("/cliente")
-public class ClienteController {
+@RequestMapping("/client")
+public class ClientController {
 
 	@Autowired
-	private ClienteService service;
+	private ClientService service;
 
 	@GetMapping("/{id}")
-	public Optional<Cliente> findById(@PathVariable Long id) {
+	public ClientDto findById(@PathVariable Long id) {
 		return service.findById(id);
 	}
 
 	@GetMapping
-	public List<Cliente> findAll() {
+	public List<ClientDto> findAll() {
 		return service.findAll();
 	}
 
 	@PostMapping
-	public void add(@RequestBody Cliente cliente) {
+	public void add(@RequestBody ClientDto cliente) {
 		service.add(cliente);
 	}
 	
 	@PutMapping
-	public void update(@RequestBody Cliente cliente) {
+	public void update(@RequestBody ClientDto cliente) {
 		service.update(cliente);
 	}
 	
 	@DeleteMapping
-	public void delete(@RequestBody Cliente cliente) {
+	public void delete(@RequestBody ClientDto cliente) {
 		service.delete(cliente);
 	}
 }

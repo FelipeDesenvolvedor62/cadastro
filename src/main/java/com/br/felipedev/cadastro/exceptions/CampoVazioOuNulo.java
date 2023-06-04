@@ -1,4 +1,4 @@
-package com.br.felipedev.cadastro.model.execpions;
+package com.br.felipedev.cadastro.exceptions;
 
 public class CampoVazioOuNulo extends RuntimeException {
 	private static final long serialVersionUID = 1L;
