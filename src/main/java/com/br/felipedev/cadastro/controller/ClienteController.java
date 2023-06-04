@@ -23,7 +23,7 @@ public class ClienteController {
 	@Autowired
 	private ClienteService service;
 
-	@GetMapping("/{id}")
+	@GetMapping("/{id}") // TODO Retirar
 	public Optional<Cliente> findById(@PathVariable Long id) {
 		return service.findById(id);
 	}
